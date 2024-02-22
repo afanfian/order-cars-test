@@ -4,9 +4,9 @@
     <div class="pb-5">
         <div class="flex justify-center pt-5 gap-5">
             <div class="space-y-2">
-                <p class="font-bold text-lg text-center">Table Cars</p>
+                <p class="font-bold text-lg text-center">Tabel Mobil</p>
                 <button class="flex justify-end items-end text-right font-bold py-2 px-4 rounded bg-blue-500 hover:bg-blue-700 text-white">
-                    <a href="/cars/create">Tambah User<i class="fas fa-plus pl-2"></i></a>
+                    <a href="/cars/create">Tambah Mobil<i class="fas fa-plus pl-2"></i></a>
                 </button>
                 <table class="table-auto rounded-md">
                     <thead class="border bg-gray-300">
@@ -27,9 +27,17 @@
                         <tr class="border">
                             <td class="px-2 text-center border">{{ $counter++ }}</td>
                             <td class="p-4 border">{{$item->car_name}}</td>
-                            <td class="p-4 border">{{$item->day_rate}}</td>
-                            <td class="p-4 border">{{$item->month_rate}}</td>
-                            <td class="p-4 border">{{$item->image}}</td>
+                            <td class="p-4 border">
+                                @for ($i = 0; $i < $item->day_rate; $i++)
+                                    <i class="fas fa-star text-yellow-500"></i>
+                                @endfor
+                            </td>
+                            <td class="p-4 border">
+                                @for ($i = 0; $i < $item->month_rate; $i++)
+                                    <i class="fas fa-star text-yellow-500"></i>
+                                @endfor
+                            </td>
+                            <td class="p-4 border"><img src="{{ asset('storage/images/' . $item->image) }}" alt="{{ $item->image }}" width="200px" height="200px" class="border-blue-600"></td>
                             <td class="p-4 border">
                                 <a href="/cars/{{ $item->id }}/edit" class="text-blue-500"><i class="fas fa-edit"></i></a>
                                 <form action="/cars/{{ $item->id }}" method="POST" class="inline">

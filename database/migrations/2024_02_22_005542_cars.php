@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('car_name', 50)->nullable(false);
             $table->float('day_rate')->nullable(false);
             $table->float('month_rate')->nullable(false);
-            $table->string('image', 256)->nullable(false);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

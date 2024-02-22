@@ -4,9 +4,9 @@
     <div class="pb-5">
         <div class="flex justify-center pt-5 gap-5">
             <div class="space-y-2">
-                <p class="font-bold text-lg text-center">Table orders</p>
+                <p class="font-bold text-lg text-center">Tabel Order</p>
                 <button class="flex justify-end items-end text-right font-bold py-2 px-4 rounded bg-blue-500 hover:bg-blue-700 text-white">
-                    <a href="/orders/create">Tambah User<i class="fas fa-plus pl-2"></i></a>
+                    <a href="/orders/create">Tambah Order<i class="fas fa-plus pl-2"></i></a>
                 </button>
                 <table class="table-auto rounded-md">
                     <thead class="border bg-gray-300">

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="flex items-center justify-center h-screen">
-    <form action="/cars/store" method="POST" class="w-4/12 bg-white shadow-md rounded-lg p-8">
+    <form action="/cars/store" method="POST"  enctype="multipart/form-data" class="w-4/12 bg-white shadow-md rounded-lg p-8">
         @csrf
         <p class="text-center text-xl font-bold pb-5">Tambah Data Mobil Baru</p>
         <div class="mb-4">
@@ -19,7 +19,7 @@
         </div>
         <div class="mb-4">
             <label for="image" class="block text-gray-700 font-bold mb-2">Gambar Mobil:</label>
-            <input type="text" name="image" id="image" placeholder="Surabaya" class="px-4 py-2 border rounded-lg w-full focus:outline-none focus:border-blue-500" required>
+            <input type="file" name="image" id="image" class="px-4 py-2 border rounded-lg w-full focus:outline-none focus:border-blue-500" required>
         </div>
         <button type="submit" name="submit" class="px-4 py-2 rounded-lg text-white bg-blue-500 hover:bg-blue-600 focus:outline-none">
             Simpan
