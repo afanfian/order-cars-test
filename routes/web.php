@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CarsController;
-use App\Models\Orders;
+use App\Http\Controllers\OrdersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +28,7 @@ Route::controller(CarsController::class)->group(function () {
     Route::delete('/cars/{id}', 'destroy');
 });
 
-Route::controller(Orders::class)->group(function () {
+Route::controller(OrdersController::class)->group(function () {
     Route::get('/orders', 'index');
     Route::get('/orders/create', 'create');
     Route::post('/orders/store', 'store');
