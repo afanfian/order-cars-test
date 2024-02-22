@@ -5,7 +5,7 @@
     <form action="/orders/{{ $orders->id }}" method="POST" class="w-4/12 bg-white shadow-md rounded-lg p-8">
         @method('PUT')
         @csrf
-        <p class="text-center text-xl font-bold pb-5">Edit Data Karyawan</p>
+        <p class="text-center text-xl font-bold pb-5">Edit Data Orders</p>
         <div class="mb-4">
             <label for="car_id" class="block text-gray-700 font-bold mb-2">Nama Mobil:</label>
             <select id="name" name="car_id" class="w-full px-2 py-2 border rounded-lg" required>
