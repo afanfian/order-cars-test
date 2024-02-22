@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CarsController;
+use App\Models\Orders;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(CarsController::class)->group(function () {
+    Route::get('/cars', 'index');
+    Route::get('/cars/create', 'create');
+    Route::post('/cars/store', 'store');
+    Route::get('/cars/{id}/edit', 'edit');
+    Route::put('/cars/{id}', 'update');
+    Route::delete('/cars/{id}', 'destroy');
+});
+
+Route::controller(Orders::class)->group(function () {
+    Route::get('/orders', 'index');
+    Route::get('/orders/create', 'create');
+    Route::post('/orders/store', 'store');
+    Route::get('/orders/{id}/edit', 'edit');
+    Route::put('/orders/{id}', 'update');
+    Route::delete('/orders/{id}', 'destroy');
 });
